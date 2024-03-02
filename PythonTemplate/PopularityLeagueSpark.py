@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# Use LF instead of CRLF for end-of-line in files for Windows compatibility.
 #Execution Command: spark-submit PopularityLeagueSpark.py dataset/links/ dataset/league.txt
 import sys
 from pyspark import SparkConf, SparkContext
