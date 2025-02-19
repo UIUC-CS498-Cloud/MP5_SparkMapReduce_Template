@@ -26,13 +26,13 @@ RUN curl -s "https://archive.apache.org/dist/hadoop/core/hadoop-3.3.6/hadoop-3.3
     && ln -s /usr/local/hadoop-3.3.6 /usr/local/hadoop \
     && chmod a+rwx -R /usr/local/hadoop/
 
-ENV HADOOP_PREFIX /usr/local/hadoop
-ENV HADOOP_COMMON_HOME /usr/local/hadoop
-ENV HADOOP_HDFS_HOME /usr/local/hadoop
-ENV HADOOP_MAPRED_HOME /usr/local/hadoop
-ENV HADOOP_YARN_HOME /usr/local/hadoop
-ENV HADOOP_CONF_DIR /usr/local/hadoop/etc/hadoop
-ENV YARN_CONF_DIR $HADOOP_PREFIX/etc/hadoop
+ENV HADOOP_PREFIX=/usr/local/hadoop
+ENV HADOOP_COMMON_HOME=/usr/local/hadoop
+ENV HADOOP_HDFS_HOME=/usr/local/hadoop
+ENV HADOOP_MAPRED_HOME=/usr/local/hadoop
+ENV HADOOP_YARN_HOME=/usr/local/hadoop
+ENV HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
+ENV YARN_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 ENV PATH="/usr/local/hadoop/bin:${PATH}"
 ENV JAVA_TOOL_OPTIONS="-XX:UseSVE=0"
 
@@ -49,7 +49,7 @@ RUN curl -s "https://archive.apache.org/dist/spark/spark-3.5.1/spark-3.5.1-bin-h
     && ln -s /usr/local/spark-3.5.1-bin-hadoop3 /usr/local/spark \
     && chmod a+rwx -R /usr/local/spark/
 ENV PATH="/usr/local/spark/bin:${PATH}"
-ENV SPARK_HOME /usr/local/spark
+ENV SPARK_HOME=/usr/local/spark
 
 # Make vim nice
 RUN echo "set background=dark" >> ~/.vimrc
