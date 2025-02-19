@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # Use LF instead of CRLF for end-of-line in files for Windows compatibility.
+# Do not change the existing code as it may lead to unexpected errors.
+
 import sys
 from pyspark import SparkConf, SparkContext
 
