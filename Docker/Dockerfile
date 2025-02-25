@@ -42,8 +42,8 @@ RUN if [ "$(uname -m)" = "x86_64" ]; then export JAVA_HOME=/usr/lib/jvm/java-1.2
     && echo "export JAVA_HOME=$JAVA_HOME" >> /root/.bashrc
 
 # Download and setup Apache Spark
-RUN curl -s "https://archive.apache.org/dist/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz" | tar -xz  -C /usr/local/ \
-    && ln -s /usr/local/spark-3.5.1-bin-hadoop3 /usr/local/spark \
+RUN curl -s "https://archive.apache.org/dist/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz" | tar -xz  -C /usr/local/ \
+    && ln -s /usr/local/spark-3.5.4-bin-hadoop3 /usr/local/spark \
     && chmod a+rwx -R /usr/local/spark/
 ENV PATH="/usr/local/spark/bin:${PATH}"
 ENV SPARK_HOME /usr/local/spark
